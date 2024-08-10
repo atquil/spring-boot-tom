@@ -2,13 +2,29 @@ management:
   endpoints:
     web:
       exposure:
-        # Enable all the endpoints
-        include: '*'
         # Enable specific endpoints
         #include: health
-
+        include: '*'
+      #Custom base path instead of /actuator --> /manage
+      #base-path: /manage
+  #Enable health
   endpoint:
     health:
       show-details: always
+  # Enable info
+  info:
+    env:
+      enabled: true
+#Custom information about application
+info:
+  app:
+    name: 'spring-boot-toom'
+    description: 'Explaining about complete telemetry, observability and monitoring'
+    version: '1'
+  author: 'atquil'
+
+
+
+
 
 

@@ -1,9 +1,8 @@
-# spring-boot-observability
-
-
+# spring-boot-tom : Monitoring
+ 
 ## Actuator:
 
-
+Tool to manage and monitor Spring Boot application using endpoints exposed over HTTP(`management.endpoints.web`) and JMX (`management.endpoints.jmx`)
 
 ## Helpful documents
 
@@ -54,6 +53,7 @@
      </dependencies>
    ```
    </details>
+3. Have a any json viewer in your browser as extension. 
 
 ## Part 2: Actuator Rest API
 
@@ -85,12 +85,15 @@ Document: https://docs.spring.io/spring-boot/api/rest/actuator/index.html
               include: * 
    ```
 
-3. Show details about the endpoint
+Some of the predefined helpful endpoints : 
 
-    + health endpoint
-      ![beforeEnablingHealth.png](src/main/resources/static/beforeEnablingHealth.png)
 
-      Now as the endpoints are exposed, we will have to configure to show the details
++ <details>
+   <summary><b>health:</b> <a href="http:localhost:8080/actuator/health">http:localhost:8080/actuator/health</a></summary>
+      
+   ![beforeEnablingHealth.png](src/main/resources/static/beforeEnablingHealth.png)
+
+   Now as the endpoints are exposed, we will have to configure to show the details
    ```properties
    management:
      endpoints:
@@ -106,33 +109,192 @@ Document: https://docs.spring.io/spring-boot/api/rest/actuator/index.html
          show-details: always
    ```
    ![AfterEnableOfHealth.png](src/main/resources/static/AfterEnableOfHealth.png)
+   </details>
 
-    + **bean** endpoint
 
-   Let's add some dummy controller and service file
-   ```java
-   @RestController
-   @RequestMapping("/api")
-   @RequiredArgsConstructor
-   public class DummyController {
+ + <details>
+      <summary><b>bean:</b><a href="http://localhost:8080/actuator/beans">http://localhost:8080/actuator/beans</a></summary>
 
-    private final DummyService dummyService;
-    @GetMapping("/base")
-    public ResponseEntity<String> getBase() {
-        return ResponseEntity.ok(dummyService.sayHello());
-    }
-   }
-   ```
-
-   ```java
-   @Service
-   public class DummyService {
+      Let's add some dummy `controller` and `service` file
+      ```java
+      @RestController
+      @RequestMapping("/api")
+      @RequiredArgsConstructor
+      public class DummyController {
    
-       public String sayHello() {return "Hello World!";}
-   }
+       private final DummyService dummyService;
+       @GetMapping("/base")
+       public ResponseEntity<String> getBase() {
+           return ResponseEntity.ok(dummyService.sayHello());
+       }
+      }
+      ```
+      ```java
+      @Service
+      public class DummyService {
+      
+          public String sayHello() {return "Hello World!";}
+      }
+      ```
+      
+      Result:
+      Now let's start the application and go to : "http://localhost:8080/actuator/beans"
+      ![dummyControllerBean.png](src/main/resources/static/dummyControllerBean.png)
+
+   </details>
+
+
++ <details>
+   <summary><b>info:</b> <a href="http://localhost:8080/actuator/info">http://localhost:8080/actuator/info</a></summary>
+   As we have not set any information about the application, the info will result in balnk 
+   + Test the url 
+   
+   + Now let's add some information about the applicaiton
+   ```properties
+   management:
+        info:
+            env:
+                enabled: true
+   #Custom information about application
+   info:
+      app:
+         name: spring-boot-toom
+         description: Explaining about complete telemetry, observability and monitoring
+         version: 1
+      author: atquil
    ```
-   Now let's start the application and go to : "http://localhost:8080/actuator/beans"
-   ![dummyControllerBean.png](src/main/resources/static/dummyControllerBean.png)
+  
+   + Now restart the application and test the url 
+   ![managementInfo.png](src/main/resources/static/managementInfo.png)
+   
+   </details>
+
+## Custom Base Path
+
+Need to modify the properties file: 
+```properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Enable specific endpoints
+        #include: health
+        include: '*'
+      #Custom base path instead of /actuator --> /manage
+      base-path: /manage
+  #Enable health
+  endpoint:
+    health:
+      show-details: always
+  # Enable info
+  info:
+    env:
+      enabled: true
+```
+URL: http://localhost:8080/manage/info 
+
+But let's comment it for ease of understanding.
+
+## Custom Health Endpoint
+
+In your application, sometimes we need to check health status of connected service if it's working fine or not. In those scenerios we can use it 
+
++ `CloudMonitoring` : Create a class CloudMonitoring implementing **HealthIndicator**
+```java
+@Component
+public class CloudMonitoring implements HealthIndicator {
+
+    private final String GCP_SERVICE = "GCP Service";
+
+    @Override
+    public Health health() {
+
+        Map<String, Object> downService = new HashMap<>();
+
+        if(isGCPServiceAvailable()){
+            // Single value : withDetail
+            return Health.up().withDetail(GCP_SERVICE,"GCP Is up and running").build();
+        }else {
+            // Multiple values: withDetails
+            downService.put(GCP_SERVICE,"GCP Is down");
+            downService.put("CONTACT ADMIN","123-1231-12");
+            return Health.down().withDetails(downService).build();
+        }
+    }
+
+    //implement the method to check if GCP and AWS is running
+    private boolean isGCPServiceAvailable() {
+        // do some logic to test
+        return false;
+    }
+}
+
+```
+**Output** : Now run the health endpoint: `http:localhost:8080/actuator/health`
+
++ <details>
+    <summary> GcpService are <b>down</b></summary>
+  
+    ```text
+    {
+      "status": "DOWN",
+      "components": {
+        "cloudMonitoring": {
+          "status": "DOWN",
+          "details": {
+            "CONTACT ADMIN": "123-1231-12",
+            "GCP Service": "GCP Is down"
+          }
+        },
+        "diskSpace": {
+          "status": "UP",
+          "details": {
+            "total": 494384795648,
+            "free": 293869715456,
+            "threshold": 10485760,
+            "path": "/Users/atulanand/Documents/GitHub/spring-boot-tom/.",
+            "exists": true
+          }
+        },
+        "ping": {
+          "status": "UP"
+        }
+      }
+    }
+    ```
+  </details>
++ <details>
+    <summary>GcpService are <b>Up</b></summary>
+  
+    ```text
+    {
+      "status": "UP",
+      "components": {
+        "cloudMonitoring": {
+          "status": "UP",
+          "details": {
+            "GCP Service": "GCP Is up and running"
+          }
+        },
+        "diskSpace": {
+          "status": "UP",
+          "details": {
+            "total": 494384795648,
+            "free": 293864648704,
+            "threshold": 10485760,
+            "path": "/Users/atulanand/Documents/GitHub/spring-boot-tom/.",
+            "exists": true
+          }
+        },
+        "ping": {
+          "status": "UP"
+        }
+      }
+    }
+    ```
+    <details>
+
 
 ## Add custom Endpoint for Actuator
 
