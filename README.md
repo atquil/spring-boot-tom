@@ -293,15 +293,42 @@ public class CloudMonitoring implements HealthIndicator {
       }
     }
     ```
-    <details>
+    <detials>
 
 
 ## Add custom Endpoint for Actuator
 
-Sometimes, you may need some specific informaiton like version of specific file, configuraiton of the application, in those scenerios you can use it.
-Steps
-+ Create a controller class**
-+
+Sometimes, you may need some specific information like version of specific file, configuraiton of the application, in those scenerios you can use it.
+
+```java
+@Component
+@Endpoint(id="custom-actuator")
+public class CustomActuatorEndpoint {
+
+    @ReadOperation
+    public String myCustomActuator() {return "My custom actuator endpoint";}
+
+    @WriteOperation
+    public String blockGCP(String key) {
+        //Some operation
+        return "Gcp has been blocked";
+    }
+
+    @DeleteOperation
+    public String removeUser(String userId) {
+        //Some operation
+        return "UserId"+userId+" has been deleted";
+    }
+    
+}
+```
+
+Output: 
++ **read operation** : GET http://localhost:8080/actuator/custom-actuator
++ **write operation** : POST/PUT http://localhost:8080/actuator/custom-actuator/{12}
++ **delete operation** : DELETE http://localhost:8080/actuator/custom-actuator/{2}
+
+
 ## Interview Questions
 
 1. <details>
@@ -336,9 +363,17 @@ Steps
                 # include: health 
    ```
    </details>
+4. <details>
+    <summary>How you can add custom method to <b>health</b> endpoint</summary>
+    
+    + `implementing HealthIndicator `
+    + `returning Health.up().withDetails(..).build()`
+    </details>
 
+5. <details>
+    <summary> How to add custom <b> endpoints</b> to actuator</summary>
+    
+    + `@Endpoint(id="<name_of_endpoint")` to class
+    + Endpoint type: `@ReadOperation`, `@WriteOperation`, `@DeleteOperation`
+   </details>
 
-2.
-
-
-````
