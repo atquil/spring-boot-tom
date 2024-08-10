@@ -1,0 +1,14 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        # Enable all the endpoints
+        include: '*'
+        # Enable specific endpoints
+        #include: health
+
+  endpoint:
+    health:
+      show-details: always
+
+
