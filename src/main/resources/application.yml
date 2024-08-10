@@ -23,6 +23,11 @@ info:
     version: '1'
   author: 'atquil'
 
+logging:
+  file:
+    name: src/my-logs.log
+  level:
+    root: info
 
 
 

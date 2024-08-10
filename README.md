@@ -169,6 +169,19 @@ Some of the predefined helpful endpoints :
    
    </details>
 
++ <details>
+    <summary><b>log:  </b><a href="http://localhost:8080/actuator/logfile">  http://localhost:8080/actuator/logfile</a> </summary>
+  
+  ```properties
+    logging:
+        file:
+            name: src/my-logs.log
+        level:
+            root: info
+  ```
+
+</details>
+
 ## Custom Base Path
 
 Need to modify the properties file: 
@@ -376,4 +389,29 @@ Output:
     + `@Endpoint(id="<name_of_endpoint")` to class
     + Endpoint type: `@ReadOperation`, `@WriteOperation`, `@DeleteOperation`
    </details>
+
+6. <details>
+    <summary> How to see the console logs using Actuators</summary>
+    
+   ```properties
+
+    logging:
+        file:
+            name: src/my-logs.log
+        level:
+            root: info 
+    
+    management:
+        endpoints:
+            web:
+                exposure:
+                    include: info, health, logfile, loggers, env        
+    
+    ```
+    + endpoint : http://localhost:8080/actuator/logfile
+   
+    output: 
+
+    ![logFile.png](src/main/resources/static/logFile.png)
+</details>
 
