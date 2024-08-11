@@ -1,5 +1,5 @@
 # telemetry-observability-monitoring
-![spring-boot-tom.jpg](src/main/resources/static/spring-boot-tom.jpg)
+![spring-boot-tom.png](src/main/resources/static/spring-boot-tom.png)
 Welcome to the Spring Boot TOM (Telemetry, Observability, and Monitoring) Tutorials repository! This series is designed to help you master the essential tools and techniques for monitoring and observing your Spring Boot applications.
 
 ## Repository Structure
