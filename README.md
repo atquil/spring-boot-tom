@@ -86,7 +86,7 @@ Document: https://docs.spring.io/spring-boot/api/rest/actuator/index.html
               include: * 
    ```
 
-Some of the predefined helpful endpoints : 
+3. Core Endpoints : 
 
 
 + <details>
@@ -170,24 +170,35 @@ Some of the predefined helpful endpoints :
    
    </details>
 
+
 + <details>
-    <summary><b>log:  </b><a href="http://localhost:8080/actuator/logfile">  http://localhost:8080/actuator/logfile</a> </summary>
-  
-  ```properties
-    logging:
-        file:
-            name: src/my-logs.log
-        level:
-            root: info
-  ```
+        <summary><b>log:  </b><a href="http://localhost:8080/actuator/logfile">  http://localhost:8080/actuator/logfile</a> </summary>
+      
+      ```properties
+        logging:
+            file:
+                name: src/my-logs.log
+            level:
+                root: info
+      ```
 
     </details>
+  
+
 + <details>
     <summary><b>metrics:</b><a href="http://localhost:8080/actuator/metrics">http://localhost:8080/actuator/metrics</a></summary>
     
     Micrometer dependency has been included
     Interesting one : http://localhost:8080/actuator/metrics/jvm.info
 </details>
+
++ <details>
+    <summary><b>audit:</b><a href="http://localhost:8080/actuator/audit">http://localhost:8080/actuator/audit</a></summary>
+
+    Used for monitoring the logging , logout etc. 
+</details>
+
+
 
 ## Custom Base Path
 
