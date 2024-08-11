@@ -450,14 +450,41 @@ Output::
 + Actuator comes with `most endpoints disabled` and `only one available by default is /health`
 + Actuator now shares the security config with regular App security rules, we just need to add the path in `securityFilterChail`/`SecurityWebFilterChain`
 
+Steps: 
+  
++ Let's add security dependency in `gradle`
+  ```properties
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  ```
++ Create a `config` package and add `SecurityConfig` file with `SecurityFilterChain`
+
 ```java
-@Bean
-public SecurityFilterChain securityFilterChain(
-  HttpSecurity http) {
-    return http.authorizeExchange()
-      .pathMatchers("/actuator/**").permitAll()
-      .anyExchange().authenticated()
-      .and().build();
+@EnableWebSecurity
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests( auth -> {
+                    //  auth.requestMatchers("/").permitAll();
+                    //  auth.requestMatchers("/actuator/**").permitAll();
+                    auth.anyRequest().authenticated();
+                })
+                .formLogin(Customizer.withDefaults())
+                .build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new InMemoryUserDetailsManager(
+                User.withUsername("atquil")
+                        .password("{noop}password")
+                        .roles("USER")
+                        .build()
+        );
+    }
+
 }
 ```
 
