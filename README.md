@@ -1,5 +1,5 @@
 # spring-boot-tom : Monitoring
- ![spring-boot-tom-thumbnail.png](src/main/resources/static/spring-boot-tom-thumbnail.png)
+![spring-boot-tom-actuator.png](src/main/resources/static/spring-boot-tom-actuator.png)
 ## Actuator:
 
 + Actuator is a production grade tool to manage and monitor Spring Boot application using endpoints exposed over HTTP(`management.endpoints.web`) and JMX (`management.endpoints.jmx`)
