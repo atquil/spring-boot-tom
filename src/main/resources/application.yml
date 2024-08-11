@@ -11,6 +11,13 @@ management:
   endpoint:
     health:
       show-details: always
+      # Custom Health Group
+      group:
+        custom:
+          include: diskSpace, ping
+          show-details: always
+          show-components: when_authorized
+
   # Enable info
   info:
     env:

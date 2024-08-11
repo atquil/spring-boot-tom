@@ -1,29 +1,340 @@
-2024-08-10T23:48:02.103+05:30  INFO 41534 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 41534 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
-2024-08-10T23:48:02.104+05:30  INFO 41534 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
-2024-08-10T23:48:02.608+05:30  INFO 41534 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-08-10T23:48:02.614+05:30  INFO 41534 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-10T23:48:02.614+05:30  INFO 41534 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-10T23:48:02.633+05:30  INFO 41534 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-10T23:48:02.633+05:30  INFO 41534 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 513 ms
-2024-08-10T23:48:02.678+05:30  WARN 41534 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
-2024-08-10T23:48:02.896+05:30  INFO 41534 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
-2024-08-10T23:48:02.923+05:30  INFO 41534 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-08-10T23:48:02.931+05:30  INFO 41534 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 1.014 seconds (process running for 1.276)
-2024-08-10T23:48:03.376+05:30  INFO 41534 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-08-10T23:48:03.377+05:30  INFO 41534 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-08-10T23:48:03.378+05:30  INFO 41534 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-08-10T23:48:16.813+05:30  INFO 41534 --- [http-nio-8080-exec-1] o.a.s.monitoring.CustomActuatorEndpoint  : My first log
-2024-08-10T23:56:56.676+05:30  INFO 41736 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 41736 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
-2024-08-10T23:56:56.677+05:30  INFO 41736 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
-2024-08-10T23:56:57.141+05:30  INFO 41736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-08-10T23:56:57.147+05:30  INFO 41736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-10T23:56:57.147+05:30  INFO 41736 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-10T23:56:57.164+05:30  INFO 41736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-10T23:56:57.164+05:30  INFO 41736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 471 ms
-2024-08-10T23:56:57.205+05:30  WARN 41736 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
-2024-08-10T23:56:57.417+05:30  INFO 41736 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
-2024-08-10T23:56:57.443+05:30  INFO 41736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-08-10T23:56:57.451+05:30  INFO 41736 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.947 seconds (process running for 1.191)
-2024-08-10T23:56:57.991+05:30  INFO 41736 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-08-10T23:56:57.991+05:30  INFO 41736 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-08-10T23:56:57.992+05:30  INFO 41736 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T00:07:25.125+05:30  INFO 41917 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 41917 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T00:07:25.129+05:30  INFO 41917 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T00:07:25.599+05:30  INFO 41917 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T00:07:25.604+05:30  INFO 41917 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T00:07:25.605+05:30  INFO 41917 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T00:07:25.622+05:30  INFO 41917 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T00:07:25.622+05:30  INFO 41917 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 474 ms
+2024-08-11T00:07:25.659+05:30  WARN 41917 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T00:07:25.877+05:30  INFO 41917 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T00:07:25.908+05:30  INFO 41917 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T00:07:25.915+05:30  INFO 41917 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.973 seconds (process running for 1.228)
+2024-08-11T00:07:26.428+05:30  INFO 41917 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T00:07:26.428+05:30  INFO 41917 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T00:07:26.429+05:30  INFO 41917 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T08:50:06.906+05:30  INFO 42642 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42642 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:50:06.907+05:30  INFO 42642 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:50:07.455+05:30  INFO 42642 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:50:07.462+05:30  INFO 42642 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:50:07.462+05:30  INFO 42642 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:50:07.483+05:30  INFO 42642 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:50:07.484+05:30  INFO 42642 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 560 ms
+2024-08-11T08:50:07.536+05:30  WARN 42642 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:50:07.765+05:30  INFO 42642 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:50:07.777+05:30  WARN 42642 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$HealthEndpointGroupMembershipValidator$NoSuchHealthContributorException: Included health contributor 'diskSpace, ping' in group 'custom' does not exist
+2024-08-11T08:50:07.779+05:30  INFO 42642 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-11T08:50:07.788+05:30  INFO 42642 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-11T08:50:07.796+05:30 ERROR 42642 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Included health contributor 'diskSpace, ping' in group 'custom' does not exist
+
+Action:
+
+Update your application to correct the invalid configuration.
+You can also set 'management.endpoint.health.validate-group-membership' to false to disable the validation.
+
+2024-08-11T08:50:31.820+05:30  INFO 42657 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42657 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:50:31.821+05:30  INFO 42657 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:50:32.247+05:30  INFO 42657 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:50:32.252+05:30  INFO 42657 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:50:32.252+05:30  INFO 42657 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:50:32.268+05:30  INFO 42657 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:50:32.268+05:30  INFO 42657 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 431 ms
+2024-08-11T08:50:32.310+05:30  WARN 42657 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:50:32.518+05:30  INFO 42657 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:50:32.547+05:30  INFO 42657 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:50:32.555+05:30  INFO 42657 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.902 seconds (process running for 1.123)
+2024-08-11T08:50:32.625+05:30  INFO 42657 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:50:32.625+05:30  INFO 42657 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:50:32.626+05:30  INFO 42657 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T08:52:39.222+05:30  INFO 42682 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42682 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:52:39.223+05:30  INFO 42682 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:52:39.670+05:30  INFO 42682 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:52:39.676+05:30  INFO 42682 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:52:39.676+05:30  INFO 42682 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:52:39.693+05:30  INFO 42682 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:52:39.694+05:30  INFO 42682 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2024-08-11T08:52:39.736+05:30  WARN 42682 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:52:39.948+05:30  INFO 42682 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:52:39.976+05:30  INFO 42682 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:52:39.984+05:30  INFO 42682 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.933 seconds (process running for 1.165)
+2024-08-11T08:52:40.547+05:30  INFO 42682 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:52:40.547+05:30  INFO 42682 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:52:40.548+05:30  INFO 42682 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T08:52:59.827+05:30  INFO 42703 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42703 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:52:59.828+05:30  INFO 42703 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:53:00.251+05:30  INFO 42703 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:53:00.256+05:30  INFO 42703 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:53:00.256+05:30  INFO 42703 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:53:00.273+05:30  INFO 42703 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:53:00.273+05:30  INFO 42703 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 430 ms
+2024-08-11T08:53:00.315+05:30  WARN 42703 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:53:00.522+05:30  INFO 42703 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:53:00.550+05:30  INFO 42703 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:53:00.558+05:30  INFO 42703 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.894 seconds (process running for 1.118)
+2024-08-11T08:53:00.633+05:30  INFO 42703 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:53:00.633+05:30  INFO 42703 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:53:00.634+05:30  INFO 42703 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T08:53:41.798+05:30  INFO 42717 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42717 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:53:41.800+05:30  INFO 42717 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:53:42.316+05:30  INFO 42717 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:53:42.322+05:30  INFO 42717 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:53:42.322+05:30  INFO 42717 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:53:42.339+05:30  INFO 42717 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:53:42.339+05:30  INFO 42717 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 517 ms
+2024-08-11T08:53:42.381+05:30  WARN 42717 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:53:42.634+05:30  INFO 42717 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:53:42.644+05:30  WARN 42717 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$HealthEndpointGroupMembershipValidator$NoSuchHealthContributorException: Included health contributor 'threshold' in group 'custom' does not exist
+2024-08-11T08:53:42.646+05:30  INFO 42717 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-11T08:53:42.655+05:30  INFO 42717 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-11T08:53:42.662+05:30 ERROR 42717 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Included health contributor 'threshold' in group 'custom' does not exist
+
+Action:
+
+Update your application to correct the invalid configuration.
+You can also set 'management.endpoint.health.validate-group-membership' to false to disable the validation.
+
+2024-08-11T08:54:12.209+05:30  INFO 42728 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42728 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:54:12.210+05:30  INFO 42728 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:54:12.656+05:30  INFO 42728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:54:12.663+05:30  INFO 42728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:54:12.663+05:30  INFO 42728 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:54:12.683+05:30  INFO 42728 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:54:12.683+05:30  INFO 42728 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 457 ms
+2024-08-11T08:54:12.725+05:30  WARN 42728 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:54:12.935+05:30  INFO 42728 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:54:12.962+05:30  INFO 42728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:54:12.970+05:30  INFO 42728 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.935 seconds (process running for 1.183)
+2024-08-11T08:54:13.509+05:30  INFO 42728 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:54:13.510+05:30  INFO 42728 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:54:13.510+05:30  INFO 42728 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-08-11T08:54:54.290+05:30  INFO 42744 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42744 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:54:54.291+05:30  INFO 42744 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:54:54.754+05:30  INFO 42744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:54:54.759+05:30  INFO 42744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:54:54.759+05:30  INFO 42744 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:54:54.776+05:30  INFO 42744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:54:54.777+05:30  INFO 42744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 470 ms
+2024-08-11T08:54:54.819+05:30  WARN 42744 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:54:55.035+05:30  INFO 42744 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:54:55.061+05:30  INFO 42744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:54:55.069+05:30  INFO 42744 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.947 seconds (process running for 1.185)
+2024-08-11T08:54:55.604+05:30  INFO 42744 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:54:55.604+05:30  INFO 42744 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:54:55.605+05:30  INFO 42744 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T08:55:19.636+05:30  INFO 42780 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 42780 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T08:55:19.637+05:30  INFO 42780 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T08:55:20.080+05:30  INFO 42780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T08:55:20.085+05:30  INFO 42780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T08:55:20.086+05:30  INFO 42780 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T08:55:20.103+05:30  INFO 42780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T08:55:20.103+05:30  INFO 42780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 450 ms
+2024-08-11T08:55:20.144+05:30  WARN 42780 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T08:55:20.358+05:30  INFO 42780 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T08:55:20.387+05:30  INFO 42780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T08:55:20.394+05:30  INFO 42780 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.926 seconds (process running for 1.163)
+2024-08-11T08:55:20.961+05:30  INFO 42780 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T08:55:20.961+05:30  INFO 42780 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T08:55:20.962+05:30  INFO 42780 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T09:19:38.101+05:30  INFO 43011 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 43011 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T09:19:38.102+05:30  INFO 43011 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T09:19:38.580+05:30  INFO 43011 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T09:19:38.586+05:30  INFO 43011 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T09:19:38.586+05:30  INFO 43011 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T09:19:38.605+05:30  INFO 43011 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T09:19:38.605+05:30  INFO 43011 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 486 ms
+2024-08-11T09:19:38.646+05:30  WARN 43011 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T09:19:38.858+05:30  INFO 43011 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T09:19:38.885+05:30  INFO 43011 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T09:19:38.893+05:30  INFO 43011 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.969 seconds (process running for 1.194)
+2024-08-11T09:19:39.427+05:30  INFO 43011 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T09:19:39.427+05:30  INFO 43011 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T09:19:39.428+05:30  INFO 43011 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T09:19:46.472+05:30 ERROR 43011 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.boot.actuate.info.InfoEndpoint.info()" because "this.infoEndpoint" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "org.springframework.boot.actuate.info.InfoEndpoint.info()" because "this.infoEndpoint" is null
+	at org.atquil.spring_boot_tom.monitoring.CustomActuatorWithExtension.info(CustomActuatorWithExtension.java:25) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:327) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:434) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-08-11T09:21:00.552+05:30  INFO 43040 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 43040 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T09:21:00.553+05:30  INFO 43040 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T09:21:01.016+05:30  INFO 43040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T09:21:01.021+05:30  INFO 43040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T09:21:01.021+05:30  INFO 43040 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T09:21:01.038+05:30  INFO 43040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T09:21:01.038+05:30  INFO 43040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 469 ms
+2024-08-11T09:21:01.080+05:30  WARN 43040 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T09:21:01.300+05:30  INFO 43040 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T09:21:01.328+05:30  INFO 43040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T09:21:01.336+05:30  INFO 43040 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.954 seconds (process running for 1.209)
+2024-08-11T09:21:01.867+05:30  INFO 43040 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T09:21:01.868+05:30  INFO 43040 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T09:21:01.869+05:30  INFO 43040 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T09:21:04.646+05:30 ERROR 43040 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.boot.actuate.info.InfoEndpoint.info()" because "this.infoEndpoint" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "org.springframework.boot.actuate.info.InfoEndpoint.info()" because "this.infoEndpoint" is null
+	at org.atquil.spring_boot_tom.monitoring.CustomActuatorWithExtension.info(CustomActuatorWithExtension.java:27) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:327) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:434) ~[spring-boot-actuator-3.3.2.jar:3.3.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-08-11T09:27:53.021+05:30  INFO 43100 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 43100 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T09:27:53.023+05:30  INFO 43100 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T09:27:53.470+05:30  INFO 43100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T09:27:53.475+05:30  INFO 43100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T09:27:53.475+05:30  INFO 43100 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T09:27:53.492+05:30  INFO 43100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T09:27:53.492+05:30  INFO 43100 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2024-08-11T09:27:53.534+05:30  WARN 43100 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T09:27:53.744+05:30  INFO 43100 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T09:27:53.773+05:30  INFO 43100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T09:27:53.781+05:30  INFO 43100 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 0.937 seconds (process running for 1.181)
+2024-08-11T09:27:54.331+05:30  INFO 43100 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T09:27:54.331+05:30  INFO 43100 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T09:27:54.332+05:30  INFO 43100 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-11T09:29:24.273+05:30  INFO 43125 --- [main] o.a.s.SpringBootTomApplication           : Starting SpringBootTomApplication using Java 21.0.1 with PID 43125 (/Users/atulanand/Documents/GitHub/spring-boot-tom/build/classes/java/main started by atulanand in /Users/atulanand/Documents/GitHub/spring-boot-tom)
+2024-08-11T09:29:24.275+05:30  INFO 43125 --- [main] o.a.s.SpringBootTomApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T09:29:24.915+05:30  INFO 43125 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-11T09:29:24.922+05:30  INFO 43125 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T09:29:24.922+05:30  INFO 43125 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T09:29:24.951+05:30  INFO 43125 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T09:29:24.952+05:30  INFO 43125 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 660 ms
+2024-08-11T09:29:25.005+05:30  WARN 43125 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'custom-actuator' contains invalid characters, please migrate to a valid format.
+2024-08-11T09:29:25.290+05:30  INFO 43125 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-08-11T09:29:25.325+05:30  INFO 43125 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-11T09:29:25.334+05:30  INFO 43125 --- [main] o.a.s.SpringBootTomApplication           : Started SpringBootTomApplication in 1.229 seconds (process running for 1.464)
+2024-08-11T09:29:25.663+05:30  INFO 43125 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-11T09:29:25.663+05:30  INFO 43125 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-11T09:29:25.664+05:30  INFO 43125 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

@@ -10,20 +10,20 @@ import org.springframework.stereotype.Service;
 /**
  * @author atquil
  */
-@Component
+@Component // To get the bean of the endpoint
 @Endpoint(id="custom-actuator")
 public class CustomActuatorEndpoint {
 
-    @ReadOperation
+    @ReadOperation //HTTP GET
     public String myCustomActuator() {return "My custom actuator endpoint";}
 
-    @WriteOperation
+    @WriteOperation // HTTP POST
     public String blockGCP(String key) {
         //Some operation
         return "Gcp has been blocked";
     }
 
-    @DeleteOperation
+    @DeleteOperation // HTTP DELETE
     public String removeUser(String userId) {
         //Some operation
         return "UserId"+userId+" has been deleted";

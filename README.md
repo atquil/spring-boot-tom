@@ -2,12 +2,13 @@
  
 ## Actuator:
 
-Tool to manage and monitor Spring Boot application using endpoints exposed over HTTP(`management.endpoints.web`) and JMX (`management.endpoints.jmx`)
++ Actuator is a production grade tool to manage and monitor Spring Boot application using endpoints exposed over HTTP(`management.endpoints.web`) and JMX (`management.endpoints.jmx`)
++ The actuator mainly exposes operational information about the running application — health, metrics, info, dump, env, logfile etc
 
 ## Helpful documents
 
 - Spring official guide to implement Actuator for production : https://docs.spring.io/spring-boot/reference/actuator/index.html
--
+- Explanation about Actuator Endpoints: https://docs.spring.io/spring-boot/docs/3.0.x/actuator-api/htmlsingle/#overview
 
 
 ## Part 1 : Project Setup
@@ -180,6 +181,12 @@ Some of the predefined helpful endpoints :
             root: info
   ```
 
+    </details>
++ <details>
+    <summary><b>metrics:</b><a href="http://localhost:8080/actuator/metrics">http://localhost:8080/actuator/metrics</a></summary>
+    
+    Micrometer dependency has been included
+    Interesting one : http://localhost:8080/actuator/metrics/jvm.info
 </details>
 
 ## Custom Base Path
@@ -338,9 +345,123 @@ public class CustomActuatorEndpoint {
 
 Output: 
 + **read operation** : GET http://localhost:8080/actuator/custom-actuator
-+ **write operation** : POST/PUT http://localhost:8080/actuator/custom-actuator/{12}
++ **write operation** : POST http://localhost:8080/actuator/custom-actuator/{12}
 + **delete operation** : DELETE http://localhost:8080/actuator/custom-actuator/{2}
 
+## Adding Custom Grouping of Actuator Endpoints
+
+Custom health indicator helps us in `aggregating` few health indicators that we may need
+
+```properties
+  endpoint:
+    health:
+      show-details: always
+      # Custom Health Group
+      group:
+        custom:
+          include: diskSpace, ping
+          show-details: always
+          show-components: always
+```
+
+URL : http://localhost:8080/actuator/health/custom
+
+Output
+```text
+{
+  "status": "UP",
+  "components": {
+    "diskSpace": {
+      "status": "UP",
+      "details": {
+        "total": 494384795648,
+        "free": 293916803072,
+        "threshold": 10485760,
+        "path": "/Users/atulanand/Documents/GitHub/spring-boot-tom/.",
+        "exists": true
+      }
+    },
+    "ping": {
+      "status": "UP"
+    }
+  }
+}
+```
+
+## Extension for Actuator Endpoints
+
+Sometimes, we need to add some more information for the existing endpoint, we can do that using `EndpointExtension`: `EndpointWebExtension` , `EndpointJMXExtension`
+
++ Note: Only **One** `Extension` can be made for a particular endpoint. 
++ Create a class called `CustomActuatorWithExtension`
+
+```java
+@Component
+@EndpointWebExtension(endpoint = InfoEndpoint.class)
+@RequiredArgsConstructor
+public class CustomActuatorWithExtension {
+
+    private final InfoEndpoint infoEndpoint;
+
+    @ReadOperation
+    public WebEndpointResponse<Map> info() {
+        Map<String, Object> info = this.infoEndpoint.info();
+        Integer status = getStatus(info);
+        // Add status to the response body
+        info.put("status", status);
+        return new WebEndpointResponse<>(info, status);
+    }
+
+    private Integer getStatus(Map<String, Object> info) {
+        //Some work
+        return 200;
+    }
+}
+
+```
+
+Output:: 
+
+```text
+{
+  "app": {
+    "name": "spring-boot-toom",
+    "description": "Explaining about complete telemetry, observability and monitoring",
+    "version": "1"
+  },
+  "author": "atquil",
+  "status": 200
+}
+```
+## Security in Actuator
+
++ Actuator comes with `most endpoints disabled` and `only one available by default is /health`
++ Actuator now shares the security config with regular App security rules, we just need to add the path in `securityFilterChail`/`SecurityWebFilterChain`
+
+```java
+@Bean
+public SecurityFilterChain securityFilterChain(
+  HttpSecurity http) {
+    return http.authorizeExchange()
+      .pathMatchers("/actuator/**").permitAll()
+      .anyExchange().authenticated()
+      .and().build();
+}
+```
+
++ We can also show details of actuator for authorized users : `when_authorized`
+```properties
+  endpoint:
+    health:
+      show-details: always
+      # Custom Health Group
+      group:
+        custom:
+          include: diskSpace, ping
+          show-details: always
+          show-components: when_authorized
+    
+```
 
 ## Interview Questions
 
@@ -413,5 +534,8 @@ Output:
     output: 
 
     ![logFile.png](src/main/resources/static/logFile.png)
-</details>
+    </details>
+7. How to add security for Actuators : Using application security: `SecurityFilterChain`
+8. Can we modify existing Actuator Endpoints: Yes using `EndpointExtension`, but can be done `only once for each endpoint`
+9. Can we add custom grouping in actuator : Yes, using **group**
 
