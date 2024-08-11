@@ -326,6 +326,7 @@ public class CloudMonitoring implements HealthIndicator {
     ```
     <detials>
 
+# Advanced Topics 
 
 ## Add custom Endpoint for Actuator
 
